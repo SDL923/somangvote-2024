@@ -34,4 +34,4 @@ jobs:
           aws s3 cp \
             --recursive \
             --region ap-northeast-2 \
-            build s3://somang-vote-2025-bucket
+            ./dist s3://somang-vote-2025-bucket
