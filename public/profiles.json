@@ -1,0 +1,30 @@
+[
+    {
+      "id": 1,
+      "grade": 18,
+      "name": "김정민",
+      "department": "인터랙션사이언스학과",
+      "imageUrl": "/images/profile1.jpg",
+      "feeling": "후보가 된 소감입니다. 긴 시간 동안 함께한 사람들에게 감사드립니다.",
+      "aboutGod": "나의 하나님은 언제나 함께하시고, 사랑을 베풀어주시는 분입니다."
+    },
+    {
+      "id": 2,
+      "grade": 18,
+      "name": "이해윤",
+      "department": "컴퓨터공학과",
+      "imageUrl": "/images/profile2.jpg",
+      "feeling": "1년하고 2개월 동안 이 공동체와 함께할 수 있어서 감사합니다.",
+      "aboutGod": "나의 하나님은 모든 상황에서 길을 열어주시는 분입니다."
+    },
+    {
+      "id": 3,
+      "grade": 18,
+      "name": "지영선",
+      "department": "경영학과",
+      "imageUrl": "/images/profile3.jpg",
+      "feeling": "후보로서 많은 기대와 설렘을 안고 이 자리에 서게 되었습니다.",
+      "aboutGod": "나의 하나님은 언제나 제 옆에 계신 분입니다."
+    }
+]
+  
