@@ -8,7 +8,7 @@ const TableContainer = styled.div`
 
 const StyledTable = styled.table`
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: collapse;  
   margin-top: 20px;
 
   th, td {
@@ -25,27 +25,6 @@ const StyledTable = styled.table`
   td {
     vertical-align: middle;
   }
-/* 
-  button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-    border-radius: 5px;
-    &:hover {
-      background-color: #0056b3;
-    }
-  } */
-
-  /* .youtube-icon {
-    background-color: red;
-    padding: 5px 10px;
-    border-radius: 5px;
-    color: white;
-    display: inline-block;
-    font-size: 1.2rem;
-  } */
 `;
 
 const ButtonBlue = styled.button`
@@ -74,25 +53,66 @@ const ButtonRed = styled.button`
 
 const Section = styled.div`
     width: 80%;
-    margin: 10px auto;
+    margin: 60px auto;
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: "Nanum Pen Script", cursive;
+    font-weight: 500;
+    font-size: 25px;
+`;
+
+const Section2 = styled.div`
+    width: 80%;
+    margin: 50px auto;
+    padding: 15px;
+    font-size: 15px;
+    font-family: "Nanum Gothic", sans-serif;
+    line-height: 1.5;
 `;
 
 const Title1 = styled.div`
-    margin-bottom: 15px;
-    font-size: 18px;
+    margin-bottom: 10px;
     font-weight: bold;
+    font-size: 20px;
+    text-align: center;
 `;
 
 const Content = styled.div`
-    font-size: 15px;
+    color: #b5b5b5;
+`;
+
+const SmallName = styled.div`
+    width: 100%;
+    margin-top: 10px;
+    text-align: right;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 12px;
     font-weight: bold;
     color: #b5b5b5;
 `;
 
-const Body = () => {
+const Title2 = styled.div`
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+`;
+
+const Content2 = styled.div`
+    text-align: center;
+    color: #b5b5b5;
+`;
+
+const Footer = styled.div`
+    width: 100%;
+    margin-top: 100px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 12px;
+`;
+
+const Body = ({ aboutSectionRef, candidatesSectionRef }) => {
   const [profiles, setProfiles] = useState([]);
 
   useEffect(() => {
@@ -103,17 +123,26 @@ const Body = () => {
 
   return (
     <>
-        <Section>
-            <Title1>2025 소망대학부 2차 총회 안내</Title1>
-            <Content>너희가 나를 택한것이 아니요<br/>내가 너희를 택하여 세웠나니</Content>
+        <Section ref={aboutSectionRef}>
+            <Content>
+              이는 너희가 흠이 없고 순전하여 어그러지고 거스르는 세대 가운데서 하나님의 흠 없는 자녀로 세상에서 그들 가운데 빛들로 나타내며
+              <br/><SmallName>빌립보서 2장 15절</SmallName>
+            </Content>
         </Section>
 
-        <Section>
+        <Section2>
             <Title1>2025 소망대학부 2차 총회 안내</Title1>
-            <Content>너희가 나를 택한것이 아니요<br/>내가 너희를 택하여 세웠나니</Content>
-        </Section>
+            <Content>2025년 소망대학부를 위한 2차 총회가 10월 27일 예배 후에 진행됩니다.<br/>기도로 함께 준비해주세요.</Content>
+        </Section2>
 
-        <TableContainer>
+        <Section2>
+            <Title1>2025 소망대학부 선거관리위원회</Title1>
+            <Content>선거관리위원회는 선거관리위원장(18이해윤)의 위촉을 받은 7명으로 구성되어 선거 관련 업무를 담당합니다.<br/><br/>선거관리위원: </Content>
+        </Section2>
+
+        <TableContainer ref={candidatesSectionRef}>
+        <Title2>CANDIDATES</Title2>
+        <Content2>후보는 학번과 이름 순으로 정렬하였습니다.</Content2>
         <StyledTable>
             <thead>
             <tr>
@@ -141,6 +170,7 @@ const Body = () => {
             </tbody>
         </StyledTable>
         </TableContainer>
+        <Footer>소망교회 대학부</Footer>
     </>
   );
 };
