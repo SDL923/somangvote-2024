@@ -19,7 +19,7 @@ const StyledTable = styled.table`
 
   th {
     background-color: #f2f2f2;
-    font-weight: bold;
+    font-weight: lighter;
   }
 
   td {
@@ -137,7 +137,7 @@ const Body = ({ aboutSectionRef, candidatesSectionRef }) => {
 
         <Section2>
             <Title1>2025 소망대학부 선거관리위원회</Title1>
-            <Content>선거관리위원회는 선거관리위원장(18이해윤)의 위촉을 받은 7명으로 구성되어 선거 관련 업무를 담당합니다.<br/><br/>선거관리위원: </Content>
+            <Content>선거관리위원회는 선거관리위원장(18이해윤)의 위촉을 받은 7명으로 구성되어 선거 관련 업무를 담당합니다.<br/><br/>선거관리위원: 18이해윤 18김근지 18백주혜 18지영선 18최다윤 20이현진 21김서현 21신윤호</Content>
         </Section2>
 
         <TableContainer ref={candidatesSectionRef}>
