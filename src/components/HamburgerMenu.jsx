@@ -8,9 +8,9 @@ const MenuButton = styled.button`
   font-size: 2rem;
   cursor: pointer;
   position: fixed;
-  top: 1rem;
+  top: 0.8rem;
   right: 1.5rem;
-  z-index: 11;  /* 햄버거 바가 항상 위에 표시되도록 */
+  z-index: 11;
 `;
 
 const MenuOverlay = styled.div`
@@ -20,7 +20,7 @@ const MenuOverlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
   transition: opacity 0.3s ease-in-out;
   z-index: 9;
 `;
@@ -29,9 +29,9 @@ const MenuList = styled.ul`
   position: fixed;
   top: 0;
   right: 0;
-  width: 80%;
+  width: 60%;
   height: 100%;
-  background-color: #333;
+  background-color: #444585;
   list-style: none;
   padding: 2rem;
   transform: ${({ menuOpen }) => (menuOpen ? 'translateX(0)' : 'translateX(100%)')};
@@ -43,12 +43,24 @@ const MenuItem = styled.li`
   padding: 1.5rem;
   color: white;
   font-size: 1.2rem;
+  cursor: pointer;
   &:hover {
     background-color: #444;
   }
 `;
 
-const HamburgerMenu = ({ menuOpen, setMenuOpen }) => {
+const HamburgerMenu = ({ 
+  menuOpen, 
+  setMenuOpen, 
+  onHomeClick, 
+  onAboutClick, 
+  onCandidatesClick 
+}) => {
+  const handleItemClick = (callback) => {
+    setMenuOpen(false);
+    callback();
+  };
+
   return (
     <>
       <MenuButton onClick={() => setMenuOpen(!menuOpen)}>
@@ -56,9 +68,9 @@ const HamburgerMenu = ({ menuOpen, setMenuOpen }) => {
       </MenuButton>
       <MenuOverlay menuOpen={menuOpen} onClick={() => setMenuOpen(false)} />
       <MenuList menuOpen={menuOpen}>
-        <MenuItem>Home</MenuItem>
-        <MenuItem>About</MenuItem>
-        <MenuItem>Contact</MenuItem>
+        <MenuItem onClick={() => handleItemClick(onHomeClick)}>Home</MenuItem>
+        <MenuItem onClick={() => handleItemClick(onAboutClick)}>About</MenuItem>
+        <MenuItem onClick={() => handleItemClick(onCandidatesClick)}>Candidates</MenuItem>
       </MenuList>
     </>
   );
