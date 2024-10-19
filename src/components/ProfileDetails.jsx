@@ -5,12 +5,12 @@ const Wrapper = styled.div`
   width: 80%;
   margin: 20px auto;
   padding: 20px;
-  background-color: #E8F5E8; /* 배경색 적용 */
+  background-color: #E8F5E8; 
   border-radius: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative; /* 아이콘을 상단에 배치하기 위한 relative */
+  position: relative;
 `;
 
 const BackIcon = styled.i`
@@ -27,15 +27,15 @@ const ProfileContainer = styled.div`
   height: 300px;
   position: relative;
   overflow: hidden;
-  clip-path: circle(150px at center); /* 구멍을 중앙에 뚫음 */
+  clip-path: circle(150px at center); 
 `;
 
 const Slider = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
-  transform: translateX(${(props) => -props.currentIndex * 100}%); /* 슬라이드 애니메이션 */
-  transition: transform 0.5s ease-in-out; /* 부드러운 전환 효과 */
+  transform: translateX(${(props) => -props.currentIndex * 100}%);
+  transition: transform 0.5s ease-in-out; 
 `;
 
 const ProfileImage = styled.img`
@@ -94,20 +94,19 @@ const Description = styled.p`
 
 const ProfileDetails = ({ profile }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const imageUrls = profile.imageUrls; // 두 개 이상의 이미지를 담은 배열
+  const imageUrls = profile.imageUrls; 
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % imageUrls.length);
-    }, 3000); // 3초마다 이미지 변경
+    }, 3000); 
 
-    return () => clearInterval(interval); // 컴포넌트 언마운트 시 인터벌 제거
+    return () => clearInterval(interval); 
   }, [imageUrls.length]);
 
   return (
     <>
       <Wrapper>
-        {/* 뒤로가기 아이콘을 Font Awesome 클래스 사용 */}
         <BackIcon className="fas fa-arrow-left" onClick={() => window.history.back()} />
         <ProfileContainer>
           <Slider currentIndex={currentIndex}>

@@ -7,7 +7,6 @@ const Profile = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    // profiles.json에서 해당 ID의 프로필을 가져옵니다.
     fetch('/profiles.json')
       .then((response) => response.json())
       .then((data) => {
