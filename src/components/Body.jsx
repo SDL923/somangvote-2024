@@ -52,7 +52,7 @@ const ButtonRed = styled.button`
 `;
 
 const Section = styled.div`
-    width: 80%;
+    width: 85%;
     margin: 60px auto;
     padding: 15px;
     border-radius: 10px;
@@ -63,10 +63,10 @@ const Section = styled.div`
 `;
 
 const Section2 = styled.div`
-    width: 80%;
+    width: 85%;
     margin: 50px auto;
     padding: 15px;
-    font-size: 15px;
+    font-size: 16px;
     font-family: "Nanum Gothic", sans-serif;
     line-height: 1.5;
 `;
