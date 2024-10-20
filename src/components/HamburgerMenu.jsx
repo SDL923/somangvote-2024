@@ -49,6 +49,21 @@ const MenuItem = styled.li`
   }
 `;
 
+const YellowLink = styled.a`
+  display: block;
+  margin-top: 10px;
+  padding: 10px 10px;
+  color: #FECD45;
+  border-radius: 25px;
+  font-size: 1rem;
+  text-decoration: none;
+  border: 2px solid #FECD45;
+  text-align: center;
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+
 const HamburgerMenu = ({ 
   menuOpen, 
   setMenuOpen, 
@@ -71,6 +86,11 @@ const HamburgerMenu = ({
         <MenuItem onClick={() => handleItemClick(onHomeClick)}>Home</MenuItem>
         <MenuItem onClick={() => handleItemClick(onAboutClick)}>About</MenuItem>
         <MenuItem onClick={() => handleItemClick(onCandidatesClick)}>Candidates</MenuItem>
+        <MenuItem>
+          <YellowLink href="https://www.youtube.com/watch?app=desktop&v=cu5rC_olAYI" target="_blank" rel="noopener noreferrer">
+            후보 영상 보기
+          </YellowLink>
+        </MenuItem> 
       </MenuList>
     </>
   );
